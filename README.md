@@ -18,10 +18,10 @@
 <details>
 <summary>:eyes: My repositories</summary>
 
-<a href="https://github.com/anuraghazra/convoychat">
+<a href="https://github.com/Choimoe/KeepLazyTool">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=KeepLazyTool" />
 </a>
-<a href="https://github.com/anuraghazra/github-readme-stats">
+<a href="https://github.com/Choimoe/OSU2Simai">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=OSU2Simai" />
 </a>
 
