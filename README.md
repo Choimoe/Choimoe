@@ -29,23 +29,35 @@
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=SDU-SmartRobot-Matlab" />
 </a>
 
-<a href="https://github.com/Choimoe/CompilerDesignStarter">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=CompilerDesignStarter" />
-</a>
-
 <a href="https://github.com/Choimoe/architecture-windlx-lab">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=architecture-windlx-lab" />
+</a>
+
+<br>
+
+<a href="https://github.com/Choimoe/CompilerDesignStarter">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=CompilerDesignStarter" />
 </a>
 
 <a href="https://github.com/Choimoe/SDUCompilerPrinciplesHomework">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=SDUCompilerPrinciplesHomework" />
 </a>
 
+<a href="https://github.com/Choimoe/SDU-python-data-visualization">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=SDU-python-data-visualization" />
+</a>
+
+<a href="https://github.com/Choimoe/SDU-ml-experiment-reports">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=SDU-ml-experiment-reports" />
+
 </details>
 
 <details>
 <summary>:eyes: My repositories</summary>
 
+<a href="https://github.com/Choimoe/ChuniArchTool">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=ChuniArchTool" />
+</a>
 <a href="https://github.com/Choimoe/PySimaiParser">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Choimoe&repo=PySimaiParser" />
 </a>
