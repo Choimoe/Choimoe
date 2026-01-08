@@ -26,3 +26,12 @@ jobs:
           plugin_languages_limit: 6
           plugin_followup: yes
           plugin_followup_sections: user
+          plugin_repositories: yes
+          plugin_repositories_pinned: 4
+          plugin_habits: yes
+          plugin_habits_facts: no
+          plugin_habits_charts: yes
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 0
+          plugin_activity_filter: issue, pr, release, fork, review, ref/create, commit
