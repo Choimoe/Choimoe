@@ -26,12 +26,12 @@
 
 <p align="center">
   <picture>
-    <img src="./metrics/github-metrics-calendar.svg" alt="Metrics contribution calendar" width="100%" style="max-width: 750px; pointer-events: none;">
+    <img src="./metrics/github-metrics-languages.svg" alt="Metrics languages" width="100%" style="max-width: 750px; pointer-events: none;">
   </picture>
 </p>
 
 <p align="center">
   <picture>
-    <img src="./metrics/github-metrics-languages.svg" alt="Metrics languages" width="100%" style="max-width: 750px; pointer-events: none;">
+    <img src="./metrics/github-metrics-calendar.svg" alt="Metrics contribution calendar" width="100%" style="max-width: 750px; pointer-events: none;">
   </picture>
 </p>
