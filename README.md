@@ -6,6 +6,11 @@
 - 📫 How to reach me: 
    - Mail: qwqshq@gmail.com
 
-<picture>
-  <img src="/github-metrics.svg" alt="Metrics" width="100%">
-</picture>
+<p align="center">
+  <img src="/github-metrics-overview.svg" alt="Metrics overview" width="100%">
+</p>
+
+<p align="center">
+  <img src="/github-metrics-languages.svg" alt="Metrics languages" width="49%">
+  <img src="/github-metrics-calendar.svg" alt="Metrics calendar" width="49%">
+</p>
