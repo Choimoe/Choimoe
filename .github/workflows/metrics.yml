@@ -12,11 +12,17 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Overview metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: github-metrics-overview.svg
+          output_action: none
           config_timezone: Asia/Shanghai
           config_display: small
           plugin_introduction: yes
@@ -25,42 +31,31 @@ jobs:
           plugin_followup: no
           plugin_repositories: no
 
-      - name: Featured repositories metrics
+      - name: Featured and pull requests metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-metrics-featured.svg
+          filename: github-metrics-featured-pr.svg
+          output_action: none
           config_timezone: Asia/Shanghai
           config_display: small
           base: ""
           plugin_repositories: yes
-          plugin_repositories_pinned: 4
-          plugin_languages: no
-          plugin_isocalendar: no
-          plugin_followup: no
-
-      - name: Pull requests metrics
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-metrics-pr.svg
-          config_timezone: Asia/Shanghai
-          config_display: small
-          base: ""
+          plugin_repositories_pinned: 2
           plugin_followup: yes
           plugin_followup_sections: repositories
           plugin_languages: no
           plugin_isocalendar: no
-          plugin_repositories: no
 
       - name: Languages metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: github-metrics-languages.svg
+          output_action: none
           config_timezone: Asia/Shanghai
           config_display: small
-          base: ""
+          base: repositories
           plugin_languages: yes
           plugin_languages_ignored: >-
             html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot
@@ -78,6 +73,7 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: github-metrics-calendar.svg
+          output_action: none
           config_timezone: Asia/Shanghai
           config_display: small
           base: ""
@@ -86,3 +82,25 @@ jobs:
           plugin_followup: no
           plugin_languages: no
           plugin_repositories: no
+
+      - name: Commit all metrics once
+        run: |
+          shopt -s nullglob
+          files=(/metrics_renders/*.svg)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No rendered metrics found"
+            exit 0
+          fi
+
+          cp /metrics_renders/*.svg ./
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add github-metrics-*.svg
+
+          if git diff --cached --quiet; then
+            echo "No metrics changes to commit"
+            exit 0
+          fi
+
+          git commit -m "chore(metrics): update all metrics [skip ci]"
+          git push
