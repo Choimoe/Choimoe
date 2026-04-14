@@ -7,14 +7,21 @@
    - Mail: qwqshq@gmail.com
 
 <p align="center">
-  <img src="./github-metrics-overview.svg" alt="Metrics overview" width="400">
-  <img src="./github-metrics-featured-pr.svg" alt="Metrics featured and pull requests overview" width="400">
+  <img src="./metrics/github-metrics-overview.svg" alt="Metrics overview" width="100%" style="max-width: 750px;">
 </p>
 
 <p align="center">
-  <img src="./github-metrics-calendar.svg" alt="Metrics contribution calendar" width="400">
+  <img src="./metrics/github-metrics-featured.svg" alt="Metrics featured repositories" width="100%" style="max-width: 750px;">
 </p>
 
 <p align="center">
-  <img src="./github-metrics-languages.svg" alt="Metrics languages" width="400">
+  <img src="./metrics/github-metrics-pr.svg" alt="Metrics pull requests overview" width="100%" style="max-width: 750px;">
+</p>
+
+<p align="center">
+  <img src="./metrics/github-metrics-calendar.svg" alt="Metrics contribution calendar" width="100%" style="max-width: 750px;">
+</p>
+
+<p align="center">
+  <img src="./metrics/github-metrics-languages.svg" alt="Metrics languages" width="100%" style="max-width: 750px;">
 </p>

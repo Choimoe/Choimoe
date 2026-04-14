@@ -21,7 +21,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-metrics-overview.svg
+          filename: metrics/github-metrics-overview.svg
           output_action: none
           config_timezone: Asia/Shanghai
           config_display: small
@@ -31,17 +31,31 @@ jobs:
           plugin_followup: no
           plugin_repositories: no
 
-      - name: Featured and pull requests metrics
+      - name: Featured repositories metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-metrics-featured-pr.svg
+          filename: metrics/github-metrics-featured.svg
           output_action: none
           config_timezone: Asia/Shanghai
           config_display: small
           base: ""
           plugin_repositories: yes
           plugin_repositories_pinned: 2
+          plugin_followup: no
+          plugin_languages: no
+          plugin_isocalendar: no
+
+      - name: Pull requests metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics/github-metrics-pr.svg
+          output_action: none
+          config_timezone: Asia/Shanghai
+          config_display: small
+          base: ""
+          plugin_repositories: no
           plugin_followup: yes
           plugin_followup_sections: repositories
           plugin_languages: no
@@ -51,7 +65,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-metrics-languages.svg
+          filename: metrics/github-metrics-languages.svg
           output_action: none
           config_timezone: Asia/Shanghai
           config_display: small
@@ -72,7 +86,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-metrics-calendar.svg
+          filename: metrics/github-metrics-calendar.svg
           output_action: none
           config_timezone: Asia/Shanghai
           config_display: small
@@ -86,16 +100,17 @@ jobs:
       - name: Commit all metrics once
         run: |
           shopt -s nullglob
-          files=(/metrics_renders/*.svg)
+          files=(/metrics_renders/metrics/*.svg)
           if [ ${#files[@]} -eq 0 ]; then
             echo "No rendered metrics found"
             exit 0
           fi
 
-          cp /metrics_renders/*.svg ./
+          mkdir -p metrics
+          cp /metrics_renders/metrics/*.svg ./metrics/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add github-metrics-*.svg
+          git add metrics/github-metrics-*.svg
 
           if git diff --cached --quiet; then
             echo "No metrics changes to commit"
